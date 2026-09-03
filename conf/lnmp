@@ -461,13 +461,13 @@ Add_VHost()
     read moredomain
     echo " domain list: ${domain} ${moredomain}"
 
-    vhostdir="/home/wwwroot/${domain}"
+    vhostdir="/www/wwwroot/${domain}"
     Echo_Yellow "Please enter the directory for the domain: $domain"
     echo
-    Echo_Yellow "Default directory: /home/wwwroot/${domain}: "
+    Echo_Yellow "Default directory: /www/wwwroot/${domain}: "
     read vhostdir
     if [ "${vhostdir}" == "" ]; then
-        vhostdir="/home/wwwroot/${domain}"
+        vhostdir="/www/wwwroot/${domain}"
     fi
     echo "Virtual Host Directory: ${vhostdir}"
 
@@ -508,7 +508,7 @@ Add_VHost()
         if [ "${al_name}" == "" ]; then
             al_name="${domain}"
         fi
-        al="access_log  /home/wwwlogs/${al_name}.log;"
+        al="access_log /www/wwwlogs/${al_name}.log;"
         echo "You access log filename: ${al_name}.log"
     fi
 
@@ -559,7 +559,7 @@ Add_VHost()
     echo "Create Virtul Host directory......"
     mkdir -p ${vhostdir}
     if [ "${access_log}" == "y" ]; then
-        touch /home/wwwlogs/${al_name}.log
+        touch /www/wwwlogs/${al_name}.log
     fi
     echo "set permissions of Virtual Host directory......"
     chmod -R 755 ${vhostdir}
@@ -984,10 +984,10 @@ Add_SSL_Info_Menu()
 
     Echo_Yellow "Please enter the directory for the domain: $domain"
     echo
-    echo "Default directory: /home/wwwroot/${domain}: "
+    echo "Default directory: /www/wwwroot/${domain}: "
     read vhostdir
     if [ "${vhostdir}" == "" ]; then
-        vhostdir="/home/wwwroot/${domain}"
+        vhostdir="/www/wwwroot/${domain}"
     fi
     echo "Virtual Host Directory: ${vhostdir}"
 
@@ -1018,7 +1018,7 @@ Add_SSL_Info_Menu()
         if [ "${al_name}" == "" ]; then
             al_name="${domain}"
         fi
-        al="access_log  /home/wwwlogs/${al_name}.log;"
+        al="access_log /www/wwwlogs/${al_name}.log;"
         echo "You access log filename: ${al_name}.log"
     fi
 
