@@ -154,12 +154,12 @@ if [ "${isSSL}" == "ssl" ]; then
             echo " domain list: ${moredomain}"
         fi
 
-        vhostdir="/home/wwwroot/${domain}"
+        vhostdir="/www/wwwroot/${domain}"
         echo "Please enter the directory for the domain: $domain"
-        Echo_Yellow "Default directory: /home/wwwroot/${domain}: "
+        Echo_Yellow "Default directory: /www/wwwroot/${domain}: "
         read vhostdir
         if [ "${vhostdir}" == "" ]; then
-            vhostdir="/home/wwwroot/${domain}"
+            vhostdir="/www/wwwroot/${domain}"
         fi
         echo "Virtual Host Directory: ${vhostdir}"
 
